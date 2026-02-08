@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -37,6 +38,7 @@ func postAlbums(c *gin.Context) {
 	var newAlbum album
 
 	if err := c.BindJSON(newAlbum); err != nil {
+		fmt.Println(err)
 		return
 	}
 
